@@ -185,8 +185,9 @@ Medium.prototype = {
 				if ( s.mode !== Medium.inlineMode && s.mode !== Medium.inlineRichMode ) {
 					this.setupContents();
 
-					if (childCount === 0 && el.firstChild) {
-						cursor.set(this, 0, el.firstChild);
+					// set auto focus
+					if (this.settings.autofocus && childCount === 0 && el.firstChild) {
+						cursor.set(0, el.firstChild);
 					}
 				}
 			}
@@ -362,7 +363,7 @@ Medium.prototype = {
 
 			if (shouldFocus) {
 				this.cache.focusedElement = toFocus;
-				this.cursor.set(this, 0, toFocus);
+				this.cursor.set(0, toFocus);
 			}
 			return newEl;
 		}
@@ -474,12 +475,12 @@ Medium.prototype = {
 			initialParagraph.innerHTML = el.innerHTML;
 			el.innerHTML = '';
 			el.appendChild(initialParagraph);
-			//this.cursor.set(this, initialParagraph.innerHTML.length, initialParagraph);
+			//this.cursor.set(initialParagraph.innerHTML.length, initialParagraph);
 		} else {
 			initialParagraph = d.createElement(s.tags.paragraph);
 			initialParagraph.innerHTML = '&nbsp;';
 			el.appendChild(initialParagraph);
-			this.cursor.set(this, 0, el.firstChild);
+			this.cursor.set(0, el.firstChild);
 		}
 
 		return this;

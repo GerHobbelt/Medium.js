@@ -361,7 +361,7 @@
 
 					if ((paragraph = medium.addTag(settings.tags.paragraph, true, null, focusedElement)) !== null) {
 						paragraph.innerHTML = '';
-						cursor.set(medium, 0, paragraph);
+						cursor.set(0, paragraph);
 					}
 				}
 			}
@@ -415,7 +415,7 @@
 			else if ( anchorNode && anchorNode === el ) {
 				medium.deleteSelection();
 				medium.setupContents();
-				cursor.set(medium, 0, el.firstChild);
+				cursor.set(0, el.firstChild);
 			}
 		},
 		preserveElementFocus: function () {
