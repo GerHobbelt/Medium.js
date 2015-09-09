@@ -302,7 +302,8 @@ Medium.prototype = {
 				if ( s.mode !== Medium.inlineMode && s.mode !== Medium.inlineRichMode ) {
 					this.setupContents();
 
-					if (childCount === 0 && el.firstChild) {
+					// set auto focus
+					if (this.settings.autofocus && childCount === 0 && el.firstChild) {
 						cursor.set(this, 0, el.firstChild);
 					}
 				}
