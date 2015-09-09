@@ -304,7 +304,7 @@ Medium.prototype = {
 
 					// set auto focus
 					if (this.settings.autofocus && childCount === 0 && el.firstChild) {
-						cursor.set(this, 0, el.firstChild);
+						cursor.set(0, el.firstChild);
 					}
 				}
 			}
@@ -480,7 +480,7 @@ Medium.prototype = {
 
 			if (shouldFocus) {
 				this.cache.focusedElement = toFocus;
-				this.cursor.set(this, 0, toFocus);
+				this.cursor.set(0, toFocus);
 			}
 			return newEl;
 		}
@@ -592,12 +592,12 @@ Medium.prototype = {
 			initialParagraph.innerHTML = el.innerHTML;
 			el.innerHTML = '';
 			el.appendChild(initialParagraph);
-			//this.cursor.set(this, initialParagraph.innerHTML.length, initialParagraph);
+			//this.cursor.set(initialParagraph.innerHTML.length, initialParagraph);
 		} else {
 			initialParagraph = d.createElement(s.tags.paragraph);
 			initialParagraph.innerHTML = '&nbsp;';
 			el.appendChild(initialParagraph);
-			this.cursor.set(this, 0, el.firstChild);
+			this.cursor.set(0, el.firstChild);
 		}
 
 		return this;
@@ -1224,7 +1224,7 @@ Medium.defaultSettings = {
 
 					if ((paragraph = medium.addTag(settings.tags.paragraph, true, null, focusedElement)) !== null) {
 						paragraph.innerHTML = '';
-						cursor.set(medium, 0, paragraph);
+						cursor.set(0, paragraph);
 					}
 				}
 			}
@@ -1278,7 +1278,7 @@ Medium.defaultSettings = {
 			else if ( anchorNode && anchorNode === el ) {
 				medium.deleteSelection();
 				medium.setupContents();
-				cursor.set(medium, 0, el.firstChild);
+				cursor.set(0, el.firstChild);
 			}
 		},
 		preserveElementFocus: function () {
