@@ -14,8 +14,8 @@
 		"url": "https://github.com/jakiestfu/Medium.js"
 	},
 	"dependencies": {
-		"rangy": ">=1.3.0-alpha.20140827",
-		"undo.js": ">=0.1.0"
+		"rangy": ">=1.3.0",
+		"undo.js": ">=0.2.0"
 	},
 	"keywords": ["editor", "wysiwyg", "contenteditable", "content", "medium", "medium.com"],
 	"license": "MIT",

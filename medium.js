@@ -856,8 +856,8 @@ Medium.defaultSettings = {
 	},
 	beforeAddTag: function (tag, shouldFocus, isEditable, afterElement) {
 	},
-	onBlur: function() {},
-	onFocus: function() {},
+    onBlur: function() {},
+    onFocus: function() {},
 	keyContext: null,
 	drag: false
 };
@@ -1027,20 +1027,20 @@ Medium.defaultSettings = {
 				}
 
 				switch (e.keyCode) {
-				case key['enter']:
-					if (action.enterKey(e) === false) {
-						utils.preventDefaultEvent(e);
-					}
-					break;
-				case key['escape']:
-					if (action.escKey(e) === false) {
-						utils.preventDefaultEvent(e);
-					}
-					break;
-				case key['backspace']:
-				case key['delete']:
-					action.backspaceOrDeleteKey(e);
-					break;
+                case key['enter']:
+                        if (action.enterKey(e) === false) {
+                                utils.preventDefaultEvent(e);
+                        }
+                        break;
+                case key['escape']:
+                        if (action.escKey(e) === false) {
+							utils.preventDefaultEvent(e);
+						}
+						break;
+					case key['backspace']:
+					case key['delete']:
+						action.backspaceOrDeleteKey(e);
+						break;
 				}
 
 				return keepEvent;
@@ -1146,23 +1146,23 @@ Medium.defaultSettings = {
 
 			return this;
 		},
-                escKey: function (e) {
-                    var medium = this.medium,
-                        el = medium.element,
-                        settings = medium.settings,
-                        cache = medium.cache;
+        escKey: function (e) {
+            var medium = this.medium,
+                el = medium.element,
+                settings = medium.settings,
+                cache = medium.cache;
 
-                    if( settings.mode === Medium.inlineMode || settings.mode === Medium.inlineRichMode ){
-                        e.target.textContent = cache.originalVal;
+            if( settings.mode === Medium.inlineMode || settings.mode === Medium.inlineRichMode ){
+                e.target.textContent = cache.originalVal;
                         
-                        if (settings.element.blur) {
-                            settings.element.blur();
-                        } else if (settings.element.onblur) {
-                            settings.element.onblur();
-                        }   
-                        return false;
-                    }
-                },
+                if (settings.element.blur) {
+                    settings.element.blur();
+                } else if (settings.element.onblur) {
+                    settings.element.onblur();
+                }   
+                return false;
+            }
+        },
 		enterKey: function (e) {
 			var medium = this.medium,
 				el = medium.element,
@@ -1171,12 +1171,12 @@ Medium.defaultSettings = {
 				cursor = medium.cursor;
 
 			if( settings.mode === Medium.inlineMode || settings.mode === Medium.inlineRichMode ){
-                            if (settings.element.blur) {
-                                settings.element.blur();
-                            } else if (settings.element.onblur) {
-                                settings.element.onblur();
-                            }	
-                            return false;
+                if (settings.element.blur) {
+                    settings.element.blur();
+                } else if (settings.element.onblur) {
+                    settings.element.onblur();
+                }	
+                return false;
 			}
 
 			if (cache.shift) {
@@ -1324,7 +1324,7 @@ Medium.defaultSettings = {
 		this.initialized = false;
 		this.cmd = false;
 		this.focusedElement = null;
-		this.originalVal = null;
+        this.originalVal = null;
 	};
 
 })(Medium);
@@ -1784,7 +1784,7 @@ Medium.defaultSettings = {
 				}
 
 				while (html.length > 0) {
-					parent.insertBefore(html[html.length - 1], wedge);
+                    parent.insertBefore(html[html.length - 1], wedge);
 				}
 			} else {
 				nodes.push(html);
