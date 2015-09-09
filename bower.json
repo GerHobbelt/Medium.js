@@ -1,12 +1,12 @@
 {
-	"name": "Medium.js",
+	"name": "medium",
 	"author": "Jakob Kelly <jakie8@gmail.com> (http://jakiestfu.com)",
 	"contributors": [
 		{
 			"name": "Robert Plummer <robertleeplummerjr@gmail.com> (http://visop-dev.com)"
 		}
 	],
-	"version": "2.0.0-alpha",
+	"version": "2.0.1",
 	"homepage": "http://jakiestfu.github.io/Medium.js",
 	"bugs": "https://github.com/jakiestfu/Medium.js/issues",
 	"repository": {
